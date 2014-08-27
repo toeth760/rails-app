@@ -1,0 +1,35 @@
+<div class="<%= datacenter.downcase -%>-resque-module resque-module-container <%= @status['dependencies']['resque_workers'] == 'OK' ? '' : 'alert-danger' -%> ">
+  <div class="resque-module-header dashboard-module-header">
+    <div class="resque-datacenter"><%= datacenter.upcase -%> Resque (<%= link_to 'details', RESQUEHEALTH_CONFIG[datacenter.downcase]["url"] %>)</div>
+    <div class="resque-environment"><%= @resque_status["environment"] %></div>
+  </div>
+  <div class="resque-module-body dashboard-module-body">
+    <div class="resque-status resque-pending-status"><label>Pending</label><span><%= @resque_status["pending"] %></span></div>
+    <div class="resque-status resque-processed-status"><label>Processed</label><span><%= @resque_status["processed"] %></span></div>
+    <div class="resque-status resque-queues-status"><label>Queues</label><span><%= @resque_status["queues"] %></span></div>
+    <% if @resque_status["queues"] > 0 %>
+    <span class="resque-queue-names">
+      <ul>
+        <% @resque_status["queue_names"].each_pair do |queue,number| %>
+          <li><%= queue+": "+number.to_s %></li>
+        <% end %>
+      </ul>
+    </span>
+    <% end %>
+    <div class="resque-status resque-workers-status"><label>Workers</label><span><%= @resque_status["workers"] %></span></div>
+    <div class="resque-status resque-working-status"><label>Working</label><span><%= @resque_status["working"] %></span></div>
+    <div class="resque-status resque-failed-status"><label>Failed</label><span><%= @resque_status["failed"] %></span></div>
+    <div class="resque-status resque-servers-status"><label>Servers</label>
+      <span>
+        <ul>
+          <% @resque_status["servers"].each do |server| %>
+            <li><%= server %></li>
+          <% end %>
+        </ul>
+      </span>
+    </div>
+  </div>
+  <div class="resque-module-footer dashboard-module-footer">
+    <div class="last-updated">Last updated on <span class="resque-last-updated-on"><%= timestamp.to_s %></span></div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="<%= datacenter.downcase -%>-health-check-module">
+  <div class="health-check-module-header dashboard-module-header">
+    <div class="health-check-datacenter"><%= datacenter.upcase -%> Health Check (<%= link_to 'details', HEALTHCHECK_CONFIG[datacenter.downcase]["url"] %>)</div>
+    <div class="health-check-capture-version">v<%= @status['version'] %></div>
+  </div>
+  <div class="health-check-module-body dashboard-module-body">
+    <% @status['dependencies'].each_pair do |test,status| %>
+      <div class="health-check-status alert-<%= status == 'OK' ? 'success' : 'danger' %>" id="health-check-<%= test %>-status">
+        <label><%= test.gsub(/_/,' ').titleize %></label>
+        <span class="health-check-status-<%= status %>">
+          <%= status %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+  <div class="health-check-module-footer dashboard-module-footer">
+    <div class="last-updated">Last updated on <span class="health-check-last-updated-on"><%= timestamp.to_s %></span></div>
+  </div>
+</div>

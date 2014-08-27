@@ -1,0 +1,25 @@
+common: &defaults
+  account: 'realpractice'
+  auth_token: '4d74cc2a2e167b028f6834ddbff5935f834a1b05'
+  secure: true
+
+development:
+  <<: *defaults
+
+benchmark:
+  <<: *defaults
+
+devint:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+qa:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults

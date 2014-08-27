@@ -1,0 +1,179 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.dashboard-module {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin: 0 0 10px 0;
+	padding: 5px;
+}
+
+.dashboard-module-header {
+	position: relative;
+}
+
+.dashboard-module-body {
+	margin: 5px 0;
+	position: relative;
+}
+
+.dashboard-module-footer {
+	position: relative;
+}
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.airbrake-module .airbrake-module-header div {
+  display: inline-block;
+}
+
+.airbrake-module .airbrake-module-body ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.airbrake-module .airbrake-module-body .airbrake-error span {
+	padding: 0 5px;
+	display: inline-block;
+}
+
+.airbrake-module .airbrake-module-body .airbrake-error .airbrake-error-count {
+	padding-right: 0;
+}
+
+.airbrake-module .airbrake-module-footer {
+  font-size: 0.75em;
+}
+
+.endtoend-module .endtoend-module-header div {
+	display: inline-block;
+}
+
+.endtoend-module .endtoend-module-header .endtoend-capture-version {
+	position: absolute;
+	right: 0;
+}
+
+.endtoend-module .endtoend-module-footer {
+	font-size: 0.75em;
+}
+
+.endtoend-module .endtoend-status {
+}
+
+.endtoend-module .endtoend-status label,
+.endtoend-module .endtoend-status label + span {
+	display: inline-block;
+}
+
+.endtoend-module .endtoend-status label {
+	cursor: default;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+.endtoend-module .endtoend-status-good {
+	background: transparent url(/assets/web-development-icons.jpg) no-repeat -240px -22px;
+	width: 26px;
+	height: 26px;
+	text-indent: -9999em;
+}
+
+.endtoend-module .endtoend-status-bad {
+	background: transparent url(/assets/web-development-icons.jpg) no-repeat -200px -22px;
+	width: 26px;
+	height: 26px;
+	text-indent: -9999em;
+}
+
+.health-check-module .health-check-module-header div {
+	display: inline-block;
+}
+
+.health-check-module .health-check-module-header .health-check-capture-version {
+	position: absolute;
+	right: 0;
+}
+
+.health-check-module .health-check-module-footer {
+	font-size: 0.75em;
+}
+
+.health-check-module .health-check-status {
+}
+
+.health-check-module .health-check-status label,
+.health-check-module .health-check-status label + span {
+	display: inline-block;
+}
+
+.health-check-module .health-check-status label {
+	cursor: default;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+.health-check-module .health-check-status-OK {
+	background: transparent url(/assets/web-development-icons.jpg) no-repeat -240px -22px;
+	width: 26px;
+  height: 26px;
+  text-indent: -9999em;
+  float:right;
+  margin-right:60px;
+}
+
+.health-check-module .health-check-status-WARN {
+	background: transparent url(/assets/web-development-icons.jpg) no-repeat -200px -22px;
+	width: 26px;
+	height: 26px;
+	text-indent: -9999em;
+  float:right;
+  margin-right:60px;
+}
+
+.resque-module .resque-module-header div {
+	display: inline-block;
+}
+
+.resque-module .resque-module-header .resque-environment {
+	position: absolute;
+	right: 0;
+}
+
+.resque-module .resque-module-body .resque-servers-status {
+/*	position: absolute;
+	right: 0;
+	top: 0;*/
+}
+
+.resque-module .resque-module-body .resque-status label,
+.resque-module .resque-module-body .resque-status label + span {
+	display: inline-block;
+}
+
+.resque-module .resque-module-body .resque-status label {
+	cursor: default;
+	width: 100px;
+}
+
+.resque-module .resque-module-body .resque-status ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.resque-module .resque-module-footer {
+	font-size: 0.75em;
+}
+
+a.popoverOption {
+  color: inherit;
+  text-decoration: none;
+}
+
+.popover {
+  word-wrap: break-word;
+}

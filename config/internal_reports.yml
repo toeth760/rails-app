@@ -1,0 +1,26 @@
+reports: &reports
+  - events_detail_report
+  - visitor_path_report
+  - visitor_path_detail_report
+  - site_summary_report
+  - attribution_report
+
+development:
+  host: "https://aoeuaeoua.rlets.com"
+  reports: *reports
+
+test:
+  host: "http://capture.services.dev:3000"
+  reports: *reports
+
+qa:
+  host: 'http://qweb250.wh.reachlocal.com'
+  reports: *reports
+
+staging:
+  host: 'http://qweb250.wh.reachlocal.com'
+  reports: *reports
+
+production:
+  host: 'https://aoeuaeoua.rlets.com'
+  reports: *reports

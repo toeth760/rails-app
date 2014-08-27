@@ -1,0 +1,27 @@
+common: &defaults
+  lax:
+    url: 'http://66.150.153.19/capture_api/resque_health.json'
+  iad:
+    url: 'http://65.97.51.19/capture_api/resque_health.json'
+  api_key: 'iwgb5aaMEw3umbE6UTr8d2fUYEu3dpat'
+
+development:
+  <<: *defaults
+
+benchmark:
+  <<: *defaults
+
+devint:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+qa:
+  url: 'http://qweb250.wh.reachlocal.com/capture_api/resque_health.json'
+
+staging:
+  url: 'http://qweb250.wh.reachlocal.com/capture_api/resque_health.json'
+
+production:
+  url: 'http://health.rlets.com/capture_api/resque_health.json'

@@ -1,0 +1,26 @@
+common: &defaults
+  lax:
+    url: 'http://66.150.153.19/capture_api/health.json'
+  iad:
+    url: 'http://65.97.51.19/capture_api/health.json'
+
+development:
+  <<: *defaults
+
+benchmark:
+  <<: *defaults
+
+devint:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+qa:
+  url: 'http://qweb250.wh.reachlocal.com/capture_api/health.json'
+
+staging:
+  url: 'http://qweb250.wh.reachlocal.com/capture_api/health.json'
+
+production:
+  url: 'http://health.rlets.com/capture_api/health.json'

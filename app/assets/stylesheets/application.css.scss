@@ -1,0 +1,195 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "twitter/bootstrap";
+
+.navbar-fixed-top {
+  height: 20px;
+  padding-bottom: 15px;
+}
+
+.container {
+  width: 100% !important;
+  background-color: #e8e8e8;
+}
+
+.module-header {
+  background-color: #e8e8e8;
+  text-align: left;
+}
+
+.airbrake-panel {
+  height: 678px !important;
+}
+
+#airbrake-container {
+  margin: 15px;
+}
+
+.airbrake {
+  background-color: #233140 !important;
+  margin-top: -1px;
+}
+
+.airbrake img {
+  height: 60px;
+}
+
+.module-container {
+  background-color: #e8e8e8;
+  height: 700px !important;
+}
+
+.panel-container {
+  height: 647px;
+}
+
+.panel-default {
+  height: 678px;
+  margin-top: 15px;
+}
+
+.health-check-status span, .resque-status span {
+  float: right;
+  margin-right: 10px;
+}
+
+.health-check-status, .resque-status {
+  border-radius: 5px;
+  margin-top: 3px;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+label {
+  margin-bottom: 0px !important;
+}
+
+.resque-status {
+  background-color: #F5F5F5;
+}
+
+.health-check-datacenter, .resque-datacenter {
+  float: left;
+}
+
+.health-check-capture-version, .resque-environment {
+  text-align: right;
+}
+
+.health-check-module-header, .resque-module-header {
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.health-check-module-footer, .resque-module-footer {
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.resque-queue-names {
+  display: none;
+}
+
+.resque-servers-status span {
+  float: right;
+}
+
+.resque-servers-status li {
+  font-size: 12px;
+  list-style: none;
+  margin-left: -25px;
+}
+
+.alert-danger .dashboard-module-header, .alert-danger .dashboard-module-footer {
+  color: #333 !important;
+}
+
+.alert-danger .resque-status, .health-check-status.alert-danger {
+  background-color: #CB3232 !important;
+  color: white;
+}
+
+.alert-danger.resque-module-container {
+  background-color: white !important;
+}
+
+table {
+  font-size: .96em !important;
+}
+
+td {
+  padding: 8px !important;
+}
+
+.airbrake-module-header {
+  margin-left: 3px;
+}
+
+#airbrake-container label {
+  margin-bottom: 8px !important;
+  margin-left: 3px !important;
+}
+
+.charts .panel-default {
+  height: 325px !important;
+}
+
+.charts .module-container {
+  height: 365px !important;
+}
+
+.side-menu {
+  position: absolute;
+  width: 402px;
+  display: block;
+  z-index: 99;
+  background-color: rgba(30, 30, 30, 0.8);
+  left: 0px;
+  top: 0px;
+  color: #fbfbfb;
+  padding: 8px;
+  padding-top: 20px;
+  height: 100%;
+  font-size: 20px;
+}
+
+.side-menu a:link, .side-menu a:visited, .side-menu a:hover, .side-menu a:active {
+  color: white;
+}
+
+.side-menu .dashboard-module {
+  border: none;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 8px;
+}
+
+footer {
+  display: none;
+}
+
+html, body, #main, .container, .content {
+  height: 100%;
+}
+
+thead td {
+  font-weight: bold;
+}

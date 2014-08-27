@@ -1,0 +1,87 @@
+<% content_for :javascript do %>
+  <script>
+    laxHealthCheck = new DashboardModule({url: "/dashboard/health_check?datacenter=lax"});
+    laxResque = new DashboardModule({url: "/dashboard/resque?datacenter=lax"});
+    iadHealthCheck = new DashboardModule({url: "/dashboard/health_check?datacenter=iad"});
+    iadResque = new DashboardModule({url: "/dashboard/resque?datacenter=iad"});
+    airbrake = new DashboardModule({url: "/dashboard/airbrake", updateInterval: 60});
+    $(document).ready(function() {
+      laxHealthCheck.init("#lax-health-check-container");
+      laxResque.init("#lax-resque-container");
+      iadHealthCheck.init("#iad-health-check-container");
+      iadResque.init("#iad-resque-container");
+      airbrake.init("#airbrake-container", function(){$('.popoverOption').popover({ trigger: "hover"  });});
+    });
+  </script>
+<% end %>
+
+<div class="side-menu hidden" style="left: -402px">
+  <div class="panel-heading module-heading internal-reports">Internal Reports</div>
+  <div class="panel-body">
+    <div id="internal-reports-container" class="dashboard-module">
+      <ul>
+        <% each_report_link do |link| %>
+          <li><%= link %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 module-container">
+    <div class="panel panel-default">
+      <div class="panel-heading module-heading">
+        <%= image_tag 'us.png' %>
+      </div>
+      <div class="panel-body">
+        <div id="lax-health-check-container" class="dashboard-module"></div>
+        <div id="lax-resque-container" class="dashboard-module"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 module-container">
+    <div class="panel panel-default">
+      <div class="panel-heading module-heading">
+        <%= image_tag 'ca.png' %>
+      </div>
+      <div class="panel-body">
+        <div id="iad-health-check-container" class="dashboard-module"></div>
+        <div id="iad-resque-container" class="dashboard-module"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 module-container">
+    <div class="panel panel-default panel-container airbrake-panel">
+      <div class="panel-heading module-heading airbrake">
+        <%= image_tag 'airbrake.png' %>
+      </div>
+      <div id="airbrake-container" class="dashboard-module"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row charts">
+  <div class="col-md-4 module-container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <iframe src="https://rpm.newrelic.com/public/charts/atjTDTYVFsN" width="500" height="300" scrolling="no" frameborder="no"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 module-container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <iframe src="https://rpm.newrelic.com/public/charts/hd3E87EE13d" width="500" height="300" scrolling="no" frameborder="no"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 module-container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <iframe src="https://rpm.newrelic.com/public/charts/2iJHrvFLKJ5" width="500" height="300" scrolling="no" frameborder="no"></iframe>
+      </div>
+    </div>
+  </div>
+</div> 

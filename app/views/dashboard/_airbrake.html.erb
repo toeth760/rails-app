@@ -1,0 +1,62 @@
+<div class="airbrake-module">
+  <div class="airbrake-module-header dashboard-module-header">Airbrake (<%= link_to 'admin', 'https://realpractice.airbrake.io/' %>)</div>
+  <div class="airbrake-module-body dashboard-module-body">
+    <table class="airbrake-recent-errors table table-striped table-bordered">
+      <thead>
+        <tr>
+          <td>Enviroment</td>
+          <td>Error</td>
+          <td>Count</td>
+        </tr>
+      </thead>
+      <tbody>
+        <label>5 Most Recent Errors</label>
+        <% @recent_errors.each do |error| %>
+          <tr class="airbrake-error">
+            <td class="airbrake-error-env"><%= error.rails_env %></td>
+            <td class="airbrake-error-message truncate">
+              <% if error.error_message.length > 100 %>
+                <a href="#" class="popoverOption" data-content="<%= error.error_message %>" rel="popover" data-placement="bottom">
+                  <%= truncate(error.error_message, :length => 100, :omission => '...') %>
+                </a>
+              <% else %>
+                <%= error.error_message %>
+              <% end %>
+            </td>
+            <td class="airbrake-error-count"><%= error.notices_count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="airbrake-frequent-errors table table-striped table-bordered">
+      <thead>
+        <tr>
+          <td>Enviroment</td>
+          <td>Error</td>
+          <td>Count</td>
+        </tr>
+      </thead>
+      <tbody>
+        <label>5 Most Frequent Errors</label>
+          <% @recent_errors.each do |error| %>
+            <tr class="airbrake-error">
+              <td class="airbrake-error-env"><%= error.rails_env %></td>
+              <td class="airbrake-error-message truncate">
+                <% if error.error_message.length > 100 %>
+                  <a href="#" class="popoverOption" data-content="<%= error.error_message %>" rel="popover" data-placement="bottom">
+                    <%= truncate(error.error_message, :length => 100, :omission => '...') %>
+                  </a>
+                <% else %>
+                  <%= error.error_message %>
+                <% end %>
+              </td>
+              <td class="airbrake-error-count"><%= error.notices_count %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="airbrake-module-footer dashboard-module-footer">
+    <div class="last-updated">Last updated on <span class="airbrake-last-updated-on"><%= timestamp.to_s %></span></div>
+  </div>
+</div>
